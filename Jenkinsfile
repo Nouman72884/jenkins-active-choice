@@ -10,29 +10,17 @@ pipeline {
         }
     }
     stage('FRONT-END Deployment') {
-    // when {
-    // expression {
-    //         return params.DEPLOYMENT_END == 'FRONT-END' && params.Branches == 'master';
-    //     }
-    // }
       steps {
         script {
           sh 'echo FRONT-END'
-          sh 'ls'
           sh 'cat master-branch.txt'
         }
       }
     }
     stage('BACK-END Deployment') {
-    // when {
-    // expression {
-    //         return params.DEPLOYMENT_END == 'BACK-END' && params.Branches == 'dev';
-    //     }
-    // }
       steps {
         script {
           sh 'echo BACK-END'
-          sh 'ls'
           sh 'cat master-branch.txt'
         }
       }
