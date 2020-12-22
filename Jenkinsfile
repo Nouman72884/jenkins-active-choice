@@ -6,7 +6,7 @@ pipeline {
   stages {
     stage ('Clone') {
         steps {
-            git branch: params.Branches , url: "https://github.com/Nouman72884/jenkins-active-choice.git"
+            git branch: params.Branches , url: "${GIT_URL}"
         }
     }
     stage('FRONT-END Deployment') {
