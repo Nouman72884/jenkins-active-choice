@@ -4,6 +4,15 @@ pipeline {
     choice(choices: ['FRONT-END', 'BACK-END'], name: 'DEPLOYMENT_END', description: 'please choose the environment you want to deploy?')
   }
   stages {
+    
+    stage('Pretest') {
+      steps {
+        script {
+         
+          sh 'cat master-branch.txt'
+        }
+      }
+    }
     stage ('Clone') {
         steps {
             git branch: params.Branches , url: "${GIT_URL}"
