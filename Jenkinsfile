@@ -15,7 +15,7 @@ pipeline {
     }
     stage ('Clone') {
         steps {
-            git branch: params.Branches , url: "${GIT_URL}"
+            git branch: params.Branches , url: "${GIT_URL}" , credentialsId: 'github'
         }
     }
     stage('FRONT-END Deployment') {
